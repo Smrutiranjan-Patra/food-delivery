@@ -1,0 +1,17 @@
+nav{
+    display: flex;
+    border: 1px solid red;
+    padding: 2em;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.65);
+}
+nav li{
+    list-style-type: none;
+    margin: 0 1rem;
+}
+nav li a{
+    text-decoration: none;
+    font-size: 1.3em;
+    color: violet;
+    font-weight: bold;
+}

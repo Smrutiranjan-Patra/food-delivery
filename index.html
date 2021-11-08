@@ -11,33 +11,87 @@
         #container {
             border: 1px solid red;
             width: 86%;
-            height: 500px;
             margin: 1em auto;
+        }
+
+        #container {
+            padding: 1em;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1em
+        }
+
+        #container div img {
+            height: 250px;
+            width: 250px;
+        }
+
+        #cart {
+            margin-top: 1.2em;
+            margin-left: 95%;
+            padding: 5px;
         }
     </style>
 </head>
 
 <body>
     <div id="nav"></div>
+    <button id="cart"> Go to Cart</button>
     <div id="container"></div>
+
 
     <script type="module">
         import { navbar } from "./components/script.js";
         import { getdata } from "./components/script.js";
         document.getElementById("nav").innerHTML = navbar();
 
-        let response = getdata(`www.themealdb.com/api/json/v1/1/search.php?f=a`)
-        response.then((res) => {
-            res = res.json()
-            .then((resu) => {
-                console.log(resu);
+        async function showdata() {
+            let response = getdata("http://www.themealdb.com/api/json/v1/1/filter.php?a=Indian")
+            response.then((res) => {
+                console.log(res.meals);
+                append(res.meals);
             })
-        }).catch((err) => {
-            console.log(err);
-        })
+            .catch((err) => {
+                console.log(err);
+            })
+        }
+        showdata();
+        
+        var btn = document.getElementById("cart");
+        var parent = document.getElementById("container");
+        function append(d) {
+            d.forEach(({ strMealThumb, strMeal }) => {
+                var div = document.createElement("div");
+                div.className = "item";
+                var pic = document.createElement("img");
+                pic.src = strMealThumb;
 
+                var name = document.createElement("h4");
+                name.innerText = strMeal
 
-    </script>
+                var price = document.createElement("p");
+                price.innerText = "₹200"
+
+                var cart = document.createElement("button");
+                cart.innerText = "Add to Cart";
+
+                div.append(pic, name, price, cart);
+                parent.append(div);
+            })
+            
+        }
+        
+        
+        if (localStorage.getItem('cart') == null) {
+            localStorage.setItem("cartdata", JSON.stringify([]));
+        }
+        
+        btn.addEventListener("click", senddata);
+        function senddata() {
+            var item = document.querySelectorAll("btn");
+            console.log(item.innerHTML);
+        }
+        </script>
 </body>
 
 </html>

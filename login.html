@@ -6,24 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css">
-    <title>Food Delivery</title>
+    <title>Document</title>
     <style>
-        #container {
-            border: 1px solid red;
-            width: 86%;
-            height: 500px;
-            margin: 1em auto;
+        #form div{
+            margin : 1rem 0;
         }
     </style>
 </head>
 
 <body>
     <div id="nav"></div>
-    <div id="container"></div>
+    <h1>Welcome to login page</h1>
+    <div id="form">
+        <div>
+            <label for="name">Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&colon;</label>
+            <input type="text" placeholder="Username">
+        </div>
+        <div>
+            <label for="name">Password&nbsp;&colon;</label>
+            <input type="password" placeholder="Password">
+        </div>
+    </div>
+    <button id="submit_btn">Submit</button>
 
     <script type="module">
         import { navbar } from "./components/script.js";
         document.getElementById("nav").innerHTML = navbar();
+
     </script>
 </body>
 

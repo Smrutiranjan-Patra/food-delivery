@@ -9,7 +9,6 @@
     <title>Food Delivery</title>
     <style>
         #container {
-            border: 1px solid red;
             width: 86%;
             margin: 1em auto;
         }
@@ -70,7 +69,7 @@
                 name.innerText = strMeal
 
                 var price = document.createElement("p");
-                price.innerText = "₹200"
+                price.innerText = "₹ 200"
 
                 var cart = document.createElement("button");
                 cart.innerText = "Add to Cart";
@@ -88,8 +87,7 @@
         
         btn.addEventListener("click", senddata);
         function senddata() {
-            var item = document.querySelectorAll("btn");
-            console.log(item.innerHTML);
+
         }
         </script>
 </body>

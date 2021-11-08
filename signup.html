@@ -5,12 +5,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="./styles/style.css">
+    <title>Document</title>
+    <style>
+        #form div {
+            margin: 1rem 0;
+        }
+    </style>
 </head>
 
 <body>
     <div id="nav"></div>
+    <h1>Welcome to login page</h1>
+    <div id="form">
+        <div>
+            <label for="name">Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&colon;</label>
+            <input type="text" placeholder="Name" id="name">
+        </div>
+        <div>
+            <label for="email">Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&colon;</label>
+            <input type="email" placeholder="Email" id="email">
+        </div>
+        <div>
+            <label for="name">Password&nbsp;&colon;</label>
+            <input type="password" placeholder="Password" id="password">
+        </div>
+        <div>
+            <label for="name">username&nbsp;&colon;</label>
+            <input type="text" placeholder="Username" id="username">
+        </div>
+        <div>
+            <label for="name">Mobile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&colon;</label>
+            <input type="text" placeholder="Username" id="username">
+        </div>
+        <div>
+            <label for="name">Description&nbsp;&colon;</label>
+            <textarea placeholder="Description" id="description"></textarea>
+        </div>
+    </div>
+    <button id="submit_btn">Submit</button>
 
     <script type="module">
         import { navbar } from "./components/script.js";

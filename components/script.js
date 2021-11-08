@@ -6,10 +6,11 @@ function navbar() {
 </nav>`
 }
 
-function getdata(url) {
+async function getdata(url) {
     let res = await fetch(url);
-    let data await res.json();
+    let data = await res.json();
+    return data;
 }
 
 
-export { navbar };
+export { navbar, getdata };

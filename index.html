@@ -23,7 +23,20 @@
 
     <script type="module">
         import { navbar } from "./components/script.js";
+        import { getdata } from "./components/script.js";
         document.getElementById("nav").innerHTML = navbar();
+
+        let response = getdata(`www.themealdb.com/api/json/v1/1/search.php?f=a`)
+        response.then((res) => {
+            res = res.json()
+            .then((resu) => {
+                console.log(resu);
+            })
+        }).catch((err) => {
+            console.log(err);
+        })
+
+
     </script>
 </body>
 
